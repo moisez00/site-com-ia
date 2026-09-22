@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Line-up — Festival Maré Cheia</title>
+<meta name="description" content="Os dez artistas do Festival Maré Cheia, com dia, horário e palco.">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html">
+      <img src="img/logo.svg" alt="">
+      <span>Maré Cheia<small>Paraty · MPB</small></span>
+    </a>
+    <nav aria-label="Menu principal">
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a class="atual" href="lineup.html" aria-current="page">Line-up</a></li>
+        <li><a href="ingressos.html">Ingressos</a></li>
+        <li><a href="informacoes.html">Informações</a></li>
+        <li><a href="faq.html">Dúvidas e contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="titulo-secao">
+        <h2>Line-up 2026</h2>
+        <p>Dez artistas, três palcos, três noites</p>
+      </div>
+
+      <div class="filtros" role="group" aria-label="Filtrar por dia">
+        <button type="button" data-dia="todos" aria-pressed="true">Todos os dias</button>
+        <button type="button" data-dia="sexta" aria-pressed="false">Sexta, 13</button>
+        <button type="button" data-dia="sabado" aria-pressed="false">Sábado, 14</button>
+        <button type="button" data-dia="domingo" aria-pressed="false">Domingo, 15</button>
+      </div>
+
+      <div class="grade-artistas">
+
+        <article class="artista cabeca-de-cartaz revela" data-dia="sexta">
+          <figure><img src="img/bia-cordilheira.svg" alt="Retrato ilustrado de Bia Cordilheira"></figure>
+          <h3>Bia Cordilheira</h3>
+          <p class="ficha">Sexta, 13 · 22h<br>Palco Cais</p>
+        </article>
+
+        <article class="artista revela" data-dia="sexta">
+          <figure><img src="img/tiao-mareia.svg" alt="Retrato ilustrado de Tião Mareia"></figure>
+          <h3>Tião Mareia</h3>
+          <p class="ficha">Sexta, 13 · 20h<br>Palco Cais</p>
+        </article>
+
+        <article class="artista revela" data-dia="sexta">
+          <figure><img src="img/lue.svg" alt="Retrato ilustrado de Luê"></figure>
+          <h3>Luê</h3>
+          <p class="ficha">Sexta, 13 · 19h<br>Palco Mangue</p>
+        </article>
+
+        <article class="artista revela" data-dia="sabado">
+          <figure><img src="img/dona-marisa.svg" alt="Retrato ilustrado de Dona Marisa"></figure>
+          <h3>Dona Marisa e os Violeiros</h3>
+          <p class="ficha">Sábado, 14 · 21h30<br>Palco Casarão</p>
+        </article>
+
+        <article class="artista revela" data-dia="sabado">
+          <figure><img src="img/clarice-beiral.svg" alt="Retrato ilustrado de Clarice Beiral"></figure>
+          <h3>Clarice Beiral</h3>
+          <p class="ficha">Sábado, 14 · 23h<br>Palco Cais</p>
+        </article>
+
+        <article class="artista revela" data-dia="sabado">
+          <figure><img src="img/jorge-tamarindo.svg" alt="Retrato ilustrado de Jorge Tamarindo"></figure>
+          <h3>Jorge Tamarindo</h3>
+          <p class="ficha">Sábado, 14 · 19h30<br>Palco Mangue</p>
+        </article>
+
+        <article class="artista revela" data-dia="sabado">
+          <figure><img src="img/aurora-quintal.svg" alt="Retrato ilustrado de Aurora Quintal"></figure>
+          <h3>Aurora Quintal</h3>
+          <p class="ficha">Sábado, 14 · 18h<br>Palco Casarão</p>
+        </article>
+
+        <article class="artista cabeca-de-cartaz revela" data-dia="domingo">
+          <figure><img src="img/quinteto-maresia.svg" alt="Retrato ilustrado do Quinteto Maresia"></figure>
+          <h3>Quinteto Maresia</h3>
+          <p class="ficha">Domingo, 15 · 20h<br>Palco Cais</p>
+        </article>
+
+        <article class="artista revela" data-dia="domingo">
+          <figure><img src="img/nara-do-cais.svg" alt="Retrato ilustrado de Nara do Cais"></figure>
+          <h3>Nara do Cais</h3>
+          <p class="ficha">Domingo, 15 · 18h30<br>Palco Casarão</p>
+        </article>
+
+        <article class="artista revela" data-dia="domingo">
+          <figure><img src="img/rapaz-do-mangue.svg" alt="Retrato ilustrado do Rapaz do Mangue"></figure>
+          <h3>Rapaz do Mangue</h3>
+          <p class="ficha">Domingo, 15 · 17h<br>Palco Mangue</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap revela">
+      <div class="titulo-secao">
+        <h2>Como funcionam os palcos</h2>
+        <p>Os três ficam a menos de 400 metros um do outro</p>
+      </div>
+      <div class="regras">
+        <div>
+          <h3>Palco Cais</h3>
+          <p>No trapiche, aberto para a baía. Recebe os shows principais das três noites e comporta 4 mil pessoas.</p>
+        </div>
+        <div>
+          <h3>Palco Casarão</h3>
+          <p>Dentro da casa de esquina da Rua da Matriz. Som acústico, 300 lugares, entrada por senha na hora.</p>
+        </div>
+        <div>
+          <h3>Palco Mangue</h3>
+          <p>Sob as árvores, no fim da rua. Shows de começo de noite e as rodas que seguem depois do último set.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div>
+      <p class="marca-pe">Festival Maré Cheia</p>
+      <p>Cais de Paraty, Rio de Janeiro · 13 a 15 de novembro de 2026</p>
+    </div>
+    <div>
+      <p>Projeto de sala de aula · 2026</p>
+      <p>Feito por Nome 1 e Nome 2</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entradas) => {
+    entradas.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('visivel'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.revela').forEach((a) => obs.observe(a));
+
+  const botoes = document.querySelectorAll('.filtros button');
+  const artistas = document.querySelectorAll('.artista');
+  botoes.forEach((botao) => {
+    botao.addEventListener('click', () => {
+      botoes.forEach((b) => b.setAttribute('aria-pressed', b === botao));
+      const dia = botao.dataset.dia;
+      artistas.forEach((artista) => {
+        artista.hidden = dia !== 'todos' && artista.dataset.dia !== dia;
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

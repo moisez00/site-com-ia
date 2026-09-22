@@ -1,0 +1,687 @@
+/* ==========================================================
+   Festival Maré Cheia — folha de estilo única
+   Paleta:  #0E2B2B verde-maré (fundo)
+            #EFE3C2 areia (texto)
+            #D9452F coral (destaques e botões)
+            #F2B134 amarelo-maracujá (detalhes)
+            #2E6FA7 azulejo (apoio)
+   Fontes:  Bricolage Grotesque (títulos) · Karla (textos)
+   ========================================================== */
+
+:root {
+  --mar: #0E2B2B;
+  --mar-claro: #16403C;
+  --areia: #EFE3C2;
+  --coral: #D9452F;
+  --maracuja: #F2B134;
+  --azulejo: #2E6FA7;
+  --linha: rgba(239, 227, 194, 0.22);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--mar);
+  color: var(--areia);
+  font-family: "Karla", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* papel granulado por cima de tudo */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.35;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0,0,0,.14) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(239,227,194,.05) 0 1px, transparent 1px 4px);
+}
+
+h1, h2, h3, .marca, .num {
+  font-family: "Bricolage Grotesque", "Karla", sans-serif;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4em;
+}
+
+h1 { font-size: clamp(2.6rem, 9vw, 6.5rem); }
+h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); }
+h3 { font-size: 1.35rem; }
+
+p { max-width: 62ch; }
+
+a { color: var(--maracuja); }
+
+.wrap {
+  width: min(1180px, 92vw);
+  margin-inline: auto;
+}
+
+section { padding: 6.5rem 0; }
+
+/* ---------- header e menu ---------- */
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(14, 43, 43, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--linha);
+}
+
+.topo .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0.9rem 0;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: var(--areia);
+}
+
+.marca img { width: 38px; height: 38px; }
+
+.marca span { display: block; }
+
+.marca small {
+  display: block;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--maracuja);
+}
+
+.menu {
+  display: flex;
+  gap: 1.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  color: var(--areia);
+  text-decoration: none;
+  font-size: 0.98rem;
+  padding: 0.25rem 0;
+  position: relative;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 3px;
+  width: 0;
+  background: var(--coral);
+  transition: width 0.25s ease;
+}
+
+.menu a:hover::after,
+.menu a:focus-visible::after { width: 100%; }
+
+.menu .atual { color: var(--maracuja); }
+.menu .atual::after { width: 100%; background: var(--maracuja); }
+
+/* ---------- hero da página inicial ---------- */
+
+.hero {
+  --cobre: 0;
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 7rem 0 0;
+  overflow: hidden;
+}
+
+.hero .wrap { position: relative; z-index: 3; padding-bottom: 1rem; }
+
+/* foto do cais de Paraty (troque img/paraty.jpg pela sua foto) */
+.paisagem {
+  position: absolute;
+  inset: -12% 0 0;
+  background-image: url("img/paraty.jpg"), url("img/paraty.svg");
+  background-size: cover, cover;
+  background-position: center 60%, center 60%;
+  background-repeat: no-repeat;
+  transform: scale(1.08);
+  will-change: transform;
+  z-index: 0;
+}
+
+/* escurece a foto de baixo para cima, para o texto ficar legivel */
+.paisagem::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(14, 43, 43, 0.72) 0%,
+    rgba(14, 43, 43, 0.45) 35%,
+    rgba(14, 43, 43, 0.82) 78%,
+    var(--mar) 100%);
+}
+
+/* o verde que cobre a foto conforme a pagina desce */
+.veu {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--mar);
+  opacity: var(--cobre);
+}
+
+.hero h1 { max-width: 14ch; }
+
+.hero h1 em {
+  font-style: normal;
+  display: block;
+  color: var(--coral);
+  -webkit-text-stroke: 2px var(--coral);
+}
+
+.linha-topo {
+  font-size: 0.95rem;
+  letter-spacing: 0.22em;
+  color: var(--maracuja);
+  margin-bottom: 1.4rem;
+}
+
+.chamada {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  max-width: 34ch;
+}
+
+/* entrada orquestrada do hero */
+.entra > * {
+  opacity: 0;
+  transform: translateY(26px);
+  animation: entrar 0.9s cubic-bezier(.2,.75,.25,1) forwards;
+}
+.entra > *:nth-child(1) { animation-delay: 0.05s; }
+.entra > *:nth-child(2) { animation-delay: 0.22s; }
+.entra > *:nth-child(3) { animation-delay: 0.42s; }
+.entra > *:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes entrar {
+  to { opacity: 1; transform: none; }
+}
+
+.botao {
+  display: inline-block;
+  background: var(--coral);
+  color: var(--areia);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.95rem 2.2rem;
+  border: 2px solid var(--coral);
+  border-radius: 999px;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.botao:hover,
+.botao:focus-visible {
+  background: transparent;
+  color: var(--coral);
+  transform: translateY(-3px);
+}
+
+.botao.vazado {
+  background: transparent;
+  border-color: var(--areia);
+  color: var(--areia);
+}
+.botao.vazado:hover { background: var(--areia); color: var(--mar); }
+
+/* maré animada embaixo do hero */
+.mare {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  height: clamp(90px, 14vw, 170px);
+  margin-top: 3.5rem;
+}
+
+.mare path { animation: correr 14s linear infinite; }
+.mare path:nth-child(2) { animation-duration: 22s; animation-direction: reverse; }
+
+@keyframes correr {
+  to { transform: translateX(-600px); }
+}
+
+/* ---------- letreiro rolante ---------- */
+
+.letreiro {
+  border-top: 2px solid var(--linha);
+  border-bottom: 2px solid var(--linha);
+  overflow: hidden;
+  padding: 0.7rem 0;
+  background: var(--coral);
+}
+
+.letreiro div {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: rolar 32s linear infinite;
+}
+
+.letreiro span {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.25rem;
+  color: var(--areia);
+  white-space: nowrap;
+}
+
+@keyframes rolar {
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- blocos de conteúdo ---------- */
+
+.titulo-secao {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  border-bottom: 2px solid var(--linha);
+  padding-bottom: 0.8rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.titulo-secao p { margin: 0; color: var(--maracuja); }
+
+.destaques {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.destaque { border-top: 4px solid var(--coral); padding-top: 1.2rem; }
+.destaque:nth-child(2) { border-color: var(--maracuja); }
+.destaque:nth-child(3) { border-color: var(--azulejo); }
+.destaque h3 { margin-bottom: 0.3rem; }
+.destaque p { font-size: 1rem; }
+
+.quando {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.quando .dado { flex: 1 1 220px; }
+.quando .num { font-size: 3.2rem; color: var(--maracuja); display: block; }
+
+/* ---------- line-up ---------- */
+
+.grade-artistas {
+  display: grid;
+  gap: 2.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+.artista { position: relative; }
+
+.artista img {
+  width: 100%;
+  display: block;
+  filter: saturate(1.05);
+  transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
+}
+
+.artista figure {
+  margin: 0;
+  overflow: hidden;
+  border: 2px solid var(--linha);
+}
+
+.artista:hover img,
+.artista:focus-within img { transform: scale(1.06) rotate(-1deg); }
+
+.artista h3 { margin: 0.8rem 0 0.2rem; }
+
+.artista .ficha {
+  font-size: 0.92rem;
+  color: var(--maracuja);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.artista.cabeca-de-cartaz h3 { font-size: 1.9rem; color: var(--coral); }
+
+.filtros {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.filtros button {
+  font-family: "Karla", sans-serif;
+  font-size: 0.95rem;
+  color: var(--areia);
+  background: transparent;
+  border: 2px solid var(--linha);
+  border-radius: 999px;
+  padding: 0.45rem 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filtros button:hover { border-color: var(--areia); }
+
+.filtros button[aria-pressed="true"] {
+  background: var(--maracuja);
+  border-color: var(--maracuja);
+  color: var(--mar);
+}
+
+.artista[hidden] { display: none; }
+
+/* ---------- ingressos ---------- */
+
+.ingressos {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start;
+}
+
+.ingresso {
+  position: relative;
+  background: var(--areia);
+  color: var(--mar);
+  padding: 2.2rem 1.9rem;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+
+/* recortes de canhoto nas laterais */
+.ingresso::before,
+.ingresso::after {
+  content: "";
+  position: absolute;
+  top: 62%;
+  width: 28px;
+  height: 28px;
+  background: var(--mar);
+  border-radius: 50%;
+}
+
+.ingresso::before { left: -14px; }
+.ingresso::after { right: -14px; }
+
+.ingresso:hover { transform: translateY(-8px) rotate(-0.6deg); }
+
+.ingresso h3 { color: var(--mar); }
+
+.ingresso .preco {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--coral);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.ingresso ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 1.8rem;
+  border-top: 2px dashed rgba(14,43,43,.35);
+  padding-top: 1.2rem;
+}
+
+.ingresso li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+  font-size: 0.98rem;
+}
+
+.ingresso li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 9px;
+  height: 9px;
+  background: var(--azulejo);
+  border-radius: 50%;
+}
+
+.ingresso li.fora { opacity: 0.45; text-decoration: line-through; }
+.ingresso li.fora::before { background: transparent; border: 2px solid var(--mar); }
+
+.ingresso .botao { color: var(--areia); }
+.ingresso .botao:hover { color: var(--coral); }
+
+.selo {
+  position: absolute;
+  top: -14px;
+  right: 18px;
+  background: var(--azulejo);
+  color: var(--areia);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.9rem;
+  transform: rotate(3deg);
+}
+
+.aviso-lote {
+  border-left: 4px solid var(--maracuja);
+  padding-left: 1.2rem;
+  margin-top: 3rem;
+}
+
+/* ---------- informações ---------- */
+
+.duas-colunas {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.mapa {
+  width: 100%;
+  display: block;
+  border: 2px solid var(--linha);
+}
+
+.regras { display: grid; gap: 2.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+.regras ul { list-style: none; padding: 0; margin: 0; }
+
+.regras li {
+  padding: 0.6rem 0 0.6rem 2rem;
+  border-bottom: 1px solid var(--linha);
+  position: relative;
+}
+
+.pode li::before { content: "+"; color: var(--maracuja); position: absolute; left: 0; font-size: 1.3rem; line-height: 1.3; }
+.nao-pode li::before { content: "–"; color: var(--coral); position: absolute; left: 0; font-size: 1.5rem; line-height: 1.1; }
+
+.chegar li { counter-increment: passo; }
+
+.linha-tempo { border-left: 2px solid var(--linha); padding-left: 1.6rem; }
+.linha-tempo div { margin-bottom: 1.6rem; position: relative; }
+.linha-tempo div::before {
+  content: "";
+  position: absolute;
+  left: -1.95rem;
+  top: 0.55em;
+  width: 11px;
+  height: 11px;
+  background: var(--coral);
+  border-radius: 50%;
+}
+.linha-tempo strong { color: var(--maracuja); }
+
+/* ---------- faq ---------- */
+
+.duvida {
+  border-bottom: 1px solid var(--linha);
+}
+
+.duvida summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.5rem 3rem 1.5rem 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.25rem;
+  position: relative;
+}
+
+.duvida summary::-webkit-details-marker { display: none; }
+
+.duvida summary::after {
+  content: "";
+  position: absolute;
+  right: 0.4rem;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-right: 3px solid var(--maracuja);
+  border-bottom: 3px solid var(--maracuja);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.duvida[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+
+.duvida[open] summary { color: var(--maracuja); }
+
+.duvida .resposta {
+  padding-bottom: 1.6rem;
+  animation: abrir 0.35s ease both;
+}
+
+@keyframes abrir {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- formulário ---------- */
+
+form { max-width: 620px; }
+
+.campo { margin-bottom: 1.6rem; }
+
+.campo label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--maracuja);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--linha);
+  color: var(--areia);
+  font-family: "Karla", sans-serif;
+  font-size: 1.05rem;
+  padding: 0.7rem 0.2rem;
+  transition: border-color 0.2s ease;
+}
+
+.campo textarea { border: 2px solid var(--linha); min-height: 140px; padding: 0.8rem; }
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--coral);
+}
+
+.campo select option { background: var(--mar); }
+
+/* ---------- footer ---------- */
+
+.rodape {
+  border-top: 2px solid var(--linha);
+  padding: 3.5rem 0 2.5rem;
+  margin-top: 4rem;
+}
+
+.rodape .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.rodape p { font-size: 0.92rem; margin: 0.3rem 0; }
+
+.rodape .marca-pe {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* ---------- revelação no scroll ---------- */
+
+.revela {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.8,.2,1);
+}
+
+.revela.visivel { opacity: 1; transform: none; }
+
+/* ---------- acessibilidade e telas pequenas ---------- */
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--maracuja);
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  body { font-size: 17px; }
+  section { padding: 4.2rem 0; }
+  .topo .wrap { padding: 0.7rem 0; }
+  .menu { gap: 1rem; width: 100%; }
+  .menu a { font-size: 0.9rem; }
+  .hero { padding-top: 4rem; min-height: 88vh; }
+  .paisagem { background-position: center 55%, center 55%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .revela { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}

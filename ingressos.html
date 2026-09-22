@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ingressos — Festival Maré Cheia</title>
+<meta name="description" content="Quatro tipos de ingresso para o Festival Maré Cheia, com preços e o que está incluído.">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html">
+      <img src="img/logo.svg" alt="">
+      <span>Maré Cheia<small>Paraty · MPB</small></span>
+    </a>
+    <nav aria-label="Menu principal">
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="lineup.html">Line-up</a></li>
+        <li><a class="atual" href="ingressos.html" aria-current="page">Ingressos</a></li>
+        <li><a href="informacoes.html">Informações</a></li>
+        <li><a href="faq.html">Dúvidas e contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="titulo-secao">
+        <h2>Ingressos</h2>
+        <p>Primeiro lote, até 30 de agosto ou enquanto durar</p>
+      </div>
+
+      <div class="ingressos">
+
+        <article class="ingresso revela">
+          <h3>Diária</h3>
+          <span class="preco">R$ 90</span>
+          <p>Um dia, à sua escolha.</p>
+          <ul>
+            <li>Entrada no Palco Cais e no Palco Mangue</li>
+            <li>Senha para o Palco Casarão por ordem de chegada</li>
+            <li>Copo retornável do festival</li>
+            <li class="fora">Área elevada do trapiche</li>
+          </ul>
+          <a class="botao" href="#comprar">Comprar diária</a>
+        </article>
+
+        <article class="ingresso revela">
+          <span class="selo">Mais vendido</span>
+          <h3>Passaporte 3 dias</h3>
+          <span class="preco">R$ 220</span>
+          <p>As três noites, sexta a domingo.</p>
+          <ul>
+            <li>Entrada nos três palcos, todos os dias</li>
+            <li>Entrada garantida no Casarão até 21h</li>
+            <li>Copo retornável e pulseira de tecido</li>
+            <li>Desconto de 20% nas pousadas parceiras</li>
+          </ul>
+          <a class="botao" href="#comprar">Comprar passaporte</a>
+        </article>
+
+        <article class="ingresso revela">
+          <h3>Trapiche</h3>
+          <span class="preco">R$ 390</span>
+          <p>Três dias com vista de frente para a água.</p>
+          <ul>
+            <li>Tudo o que o passaporte inclui</li>
+            <li>Área elevada do trapiche, com 200 lugares sentados</li>
+            <li>Entrada por portão próprio, sem fila</li>
+            <li>Passagem de som aberta na tarde de sábado</li>
+          </ul>
+          <a class="botao" href="#comprar">Comprar trapiche</a>
+        </article>
+
+        <article class="ingresso revela">
+          <h3>Morador de Paraty</h3>
+          <span class="preco">R$ 45</span>
+          <p>Três dias, com comprovante de residência.</p>
+          <ul>
+            <li>Entrada nos três palcos, todos os dias</li>
+            <li>Retirada presencial na Casa da Cultura</li>
+            <li>Copo retornável do festival</li>
+            <li class="fora">Venda pela internet</li>
+          </ul>
+          <a class="botao" href="#comprar">Ver como retirar</a>
+        </article>
+
+      </div>
+
+      <div class="aviso-lote revela" id="comprar">
+        <h3>Antes de comprar</h3>
+        <p>Meia-entrada para estudantes, pessoas com mais de 60 anos, professores da rede pública e acompanhantes de pessoas com deficiência, em todos os tipos. Crianças de até 10 anos não pagam e entram acompanhadas.</p>
+        <p>Cada CPF leva no máximo quatro ingressos. A troca de titularidade é gratuita até 8 de novembro, pelo mesmo site da compra.</p>
+        <p>Esta é uma página de um trabalho escolar: os botões de compra não levam a lugar nenhum.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div>
+      <p class="marca-pe">Festival Maré Cheia</p>
+      <p>Cais de Paraty, Rio de Janeiro · 13 a 15 de novembro de 2026</p>
+    </div>
+    <div>
+      <p>Projeto de sala de aula · 2026</p>
+      <p>Feito por Nome 1 e Nome 2</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entradas) => {
+    entradas.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('visivel'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.revela').forEach((a) => obs.observe(a));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dúvidas e contato — Festival Maré Cheia</title>
+<meta name="description" content="Perguntas frequentes e formulário de contato do Festival Maré Cheia.">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html">
+      <img src="img/logo.svg" alt="">
+      <span>Maré Cheia<small>Paraty · MPB</small></span>
+    </a>
+    <nav aria-label="Menu principal">
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="lineup.html">Line-up</a></li>
+        <li><a href="ingressos.html">Ingressos</a></li>
+        <li><a href="informacoes.html">Informações</a></li>
+        <li><a class="atual" href="faq.html" aria-current="page">Dúvidas e contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="titulo-secao">
+        <h2>Dúvidas</h2>
+        <p>O que mais perguntam para a gente</p>
+      </div>
+
+      <details class="duvida revela">
+        <summary>E se chover nos três dias?</summary>
+        <div class="resposta"><p>O festival acontece com chuva. O Palco Cais tem cobertura sobre o palco, não sobre o público, então leve capa. Só interrompemos por raio na baía ou por vento acima de 60 km/h, e nesse caso o show recomeça assim que a equipe liberar.</p></div>
+      </details>
+
+      <details class="duvida revela">
+        <summary>A maré alta alaga mesmo a área do show?</summary>
+        <div class="resposta"><p>Sim, e faz parte. Nas noites de maré cheia a água sobe até uns 20 centímetros em parte da Rua da Praia. A área elevada do trapiche e o Casarão ficam secos, e a equipe sinaliza os trechos alagados com fita refletiva.</p></div>
+      </details>
+
+      <details class="duvida revela">
+        <summary>Posso entrar e sair no mesmo dia?</summary>
+        <div class="resposta"><p>Pode, quantas vezes quiser, até as 23h. Depois desse horário o portão funciona só para saída, porque a capacidade do centro histórico já está no limite.</p></div>
+      </details>
+
+      <details class="duvida revela">
+        <summary>Tem comida e bebida lá dentro?</summary>
+        <div class="resposta"><p>Tem uma rua de barracas com cozinhas de Paraty e da Ilha do Araújo, com opções vegetarianas em todas elas. O pagamento é por cartão ou Pix, sem dinheiro. Água é de graça nos bebedouros ao lado de cada palco.</p></div>
+      </details>
+
+      <details class="duvida revela">
+        <summary>Como funciona a senha do Palco Casarão?</summary>
+        <div class="resposta"><p>São 300 lugares. A distribuição de senhas começa às 18h na porta da casa, uma por pessoa presente. Quem tem o ingresso Trapiche entra sem senha; quem tem passaporte entra sem senha até as 21h.</p></div>
+      </details>
+
+      <details class="duvida revela">
+        <summary>Crianças podem ir?</summary>
+        <div class="resposta"><p>Até 10 anos não pagam e entram acompanhadas por um responsável. De 11 a 15 anos, ingresso normal e responsável junto. Emprestamos protetor auricular infantil no posto de apoio, com devolução na saída.</p></div>
+      </details>
+
+      <details class="duvida revela">
+        <summary>Onde dormir na cidade?</summary>
+        <div class="resposta"><p>Quem tem passaporte ou Trapiche recebe por e-mail a lista de pousadas parceiras com 20% de desconto. Novembro é baixa temporada em Paraty, mas a cidade lota no fim de semana do festival: reserve com antecedência.</p></div>
+      </details>
+
+      <details class="duvida revela">
+        <summary>Perdi alguma coisa. E agora?</summary>
+        <div class="resposta"><p>Os achados ficam no posto de apoio, ao lado do portão, durante o festival, e depois na Casa da Cultura por 30 dias. Descreva o objeto no formulário abaixo que a gente confere e responde.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap revela">
+      <div class="titulo-secao">
+        <h2>Falar com a produção</h2>
+        <p>Respondemos em até dois dias úteis</p>
+      </div>
+
+      <form>
+        <div class="campo">
+          <label for="nome">Seu nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Como devemos te chamar">
+        </div>
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="nome@email.com">
+        </div>
+        <div class="campo">
+          <label for="assunto">Sobre o que é</label>
+          <select id="assunto" name="assunto">
+            <option>Ingressos e meia-entrada</option>
+            <option>Acessibilidade</option>
+            <option>Achados e perdidos</option>
+            <option>Imprensa</option>
+            <option>Quero tocar no festival</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Conte o que você precisa"></textarea>
+        </div>
+        <button class="botao" type="button">Enviar mensagem</button>
+        <p style="font-size:0.9rem;margin-top:1rem;">Formulário de trabalho escolar: nada é enviado de verdade.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div>
+      <p class="marca-pe">Festival Maré Cheia</p>
+      <p>Cais de Paraty, Rio de Janeiro · 13 a 15 de novembro de 2026</p>
+    </div>
+    <div>
+      <p>Projeto de sala de aula · 2026</p>
+      <p>Feito por Nome 1 e Nome 2</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entradas) => {
+    entradas.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('visivel'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.revela').forEach((a) => obs.observe(a));
+
+  // fecha as outras perguntas ao abrir uma
+  const duvidas = document.querySelectorAll('.duvida');
+  duvidas.forEach((d) => d.addEventListener('toggle', () => {
+    if (d.open) duvidas.forEach((o) => { if (o !== d) o.open = false; });
+  }));
+</script>
+
+</body>
+</html>
