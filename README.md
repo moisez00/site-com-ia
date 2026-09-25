@@ -63,20 +63,6 @@ O projeto teve como referência alguns sites de festivais:
 
 ---
 
-## 🔄 Antes e depois
-
-### Antes
-
-![Antes](img/antes.png)
-
-### Depois
-
-![Depois](img/depois.png)
-
-A versão final buscou substituir uma aparência mais genérica por uma identidade visual própria, utilizando a paleta do festival, tipografia definida e elementos inspirados no ambiente marítimo.
-
----
-
 ## 🤖 Prompts que mais contribuíram para o desenvolvimento
 
 ### 1. Estrutura inicial do site
